@@ -1,0 +1,18 @@
+# microservice-config-client-authority
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: foobar #这个参数放在application.yml中也可,但建议放在这里.可以用eureka.instance.appname顶替.
+  cloud:
+    config:
+      uri: http://localhost:8080 #curl style uri的优先级低于属性的优先级 密码第一种 http://user123:password123@localhost:8080
+      username: user123 #第2中密码配置方法 任选一种即可.
+      password: password123 
+      profile: production
+      label: master
+
+
+
+
